@@ -5,16 +5,13 @@ import Products from "./components/Shop/Products";
 import { useSelector } from "react-redux";
 
 function App() {
-  const cartShow = useSelector((state) => state.cart.showCart);
-  console.log(cartShow);
+  const showCart = useSelector((state) => state.ui.cartIsVisible);
 
   return (
-    <>
-      <Layout>
-        {cartShow && <Cart />}
-        <Products />
-      </Layout>
-    </>
+    <Layout>
+      {showCart && <Cart />}
+      <Products />
+    </Layout>
   );
 }
 
